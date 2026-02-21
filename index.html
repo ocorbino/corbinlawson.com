@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corbin Lawson</title>
+    <meta
+      name="description"
+      content="Corbin Lawson's personal site. Building thoughtful digital products and practical systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#">corbinlawson.com</a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Personal site</p>
+        <h1>Corbin Lawson</h1>
+        <p class="lead">
+          I build useful experiences with clean design, reliable engineering, and an eye for detail.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Let’s Connect</a>
+          <a class="btn btn-secondary" href="#work">View Work</a>
+        </div>
+      </section>
+
+      <section id="about" class="panel">
+        <h2>About</h2>
+        <p>
+          This is the home base for my projects, writing, and collaborations. I focus on practical solutions that
+          are easy to use and built to last.
+        </p>
+      </section>
+
+      <section id="work" class="panel">
+        <h2>Work</h2>
+        <p>Selected projects and case studies will be added here soon.</p>
+      </section>
+
+      <section id="contact" class="panel">
+        <h2>Contact</h2>
+        <p>
+          Want to work together? Reach out at
+          <a href="mailto:hello@corbinlawson.com">hello@corbinlawson.com</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Corbin Lawson</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
