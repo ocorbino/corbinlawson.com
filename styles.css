@@ -205,6 +205,70 @@ h1 {
   margin: 1rem 0;
 }
 
+.panel-feature {
+  position: relative;
+  min-height: 340px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.panel-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08));
+}
+
+.panel-feature h2,
+.panel-feature p {
+  position: relative;
+  color: #0f172a;
+  text-shadow: none;
+}
+
+.panel-feature h2 {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  margin-bottom: 0.55rem;
+}
+
+.panel-feature p {
+  max-width: 62ch;
+}
+
+.panel-feature h2,
+.panel-feature p {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  border-radius: 12px;
+  padding: 0.45rem 0.8rem;
+}
+
+.panel-feature-design {
+  background-color: #e5e7eb;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)),
+    url("media/services-code-bg.png");
+}
+
+.panel-feature-marketing {
+  background-color: #e5e7eb;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)),
+    url("media/services-marketing-bg.png");
+}
+
+.panel-feature-maintenance {
+  background-color: #e5e7eb;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)),
+    url("media/services-maintenance-bg.png");
+}
+
 .panel h2 {
   font-size: 1.15rem;
   margin-bottom: 0.35rem;
