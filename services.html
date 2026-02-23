@@ -62,13 +62,15 @@
 
       <section class="panel panel-feature panel-feature-marketing">
         <div class="marketing-layout">
-          <div class="marketing-stack" aria-label="SEO and marketing platforms">
+          <div class="marketing-left">
+            <div class="marketing-stack" aria-label="SEO and marketing platforms">
             <div class="marketing-top">SEO + Marketing from</div>
             <div class="marketing-logos">
               <span class="logo-badge logo-google" aria-label="Google">G</span>
               <span class="logo-badge logo-facebook" aria-label="Facebook">f</span>
             </div>
             <div class="marketing-bottom">and more</div>
+            </div>
           </div>
 
           <div class="marketing-copy">
@@ -97,8 +99,14 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      requestAnimationFrame(function () {
-        document.body.classList.remove("page-enter");
+      function resetPageTransitionState() {
+        document.body.classList.remove("page-enter", "page-exit");
+      }
+
+      requestAnimationFrame(resetPageTransitionState);
+      window.addEventListener("pageshow", resetPageTransitionState);
+      window.addEventListener("pagehide", function () {
+        document.body.classList.remove("page-exit");
       });
 
       document.querySelectorAll('a[data-transition="page"]').forEach(function (link) {

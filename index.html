@@ -86,8 +86,14 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      requestAnimationFrame(function () {
-        document.body.classList.remove("page-enter");
+      function resetPageTransitionState() {
+        document.body.classList.remove("page-enter", "page-exit");
+      }
+
+      requestAnimationFrame(resetPageTransitionState);
+      window.addEventListener("pageshow", resetPageTransitionState);
+      window.addEventListener("pagehide", function () {
+        document.body.classList.remove("page-exit");
       });
 
       document.querySelectorAll('a[data-transition="page"]').forEach(function (link) {

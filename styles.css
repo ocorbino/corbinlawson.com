@@ -350,6 +350,16 @@ h1 {
   align-items: center;
 }
 
+.marketing-left {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+}
+
+.marketing-left h2 {
+  margin: 0;
+}
+
 .marketing-stack {
   position: relative;
   background: rgba(255, 255, 255, 0.9);
@@ -640,6 +650,15 @@ h1 {
 
   .process-layout {
     grid-template-columns: 1fr;
+  }
+
+  .process-copy {
+    order: 1;
+  }
+
+  .process-cta {
+    order: 2;
+    margin-top: 0.35rem;
   }
 }
 
