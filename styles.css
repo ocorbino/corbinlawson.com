@@ -25,6 +25,19 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+body.page-enter {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+body.page-exit {
+  opacity: 0;
+  transform: translateY(-18px);
 }
 
 .page-bg {
@@ -232,9 +245,52 @@ h1 {
   background: #e5e7eb;
 }
 
-.video-fallback {
-  margin-top: 0.6rem;
+.contact-form {
+  width: min(680px, 100%);
+  margin: 0.9rem auto 0;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.form-label {
+  font-weight: 700;
   font-size: 0.92rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: #ffffff;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: 2px solid #9ca3af;
+  outline-offset: 1px;
+}
+
+.contact-form .btn {
+  border: 0;
+  cursor: pointer;
+}
+
+.form-note {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .panel a {
@@ -255,6 +311,16 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+
+  body.page-enter,
+  body.page-exit {
+    opacity: 1;
+    transform: none;
+  }
+
   .site-header {
     animation: none;
   }

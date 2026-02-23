@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Corbin Lawson</title>
+    <meta
+      name="description"
+      content="Contact Corbin Lawson for website design, maintenance, and marketing support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-enter">
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" data-transition="page">Corbin Lawson's Design's</a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" data-transition="page">Home</a></li>
+          <li><a href="services.html" data-transition="page">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Contact</h1>
+        <p class="lead">Ready to get started? Reach out and I will get back to you shortly.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Send a Message</h2>
+        <form
+          class="contact-form"
+          action="mailto:corbinlawson16@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="form-row">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-input" id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="comments">Comments</label>
+            <textarea class="form-textarea" id="comments" name="comments" rows="6" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send Email</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Corbin Lawson</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      requestAnimationFrame(function () {
+        document.body.classList.remove("page-enter");
+      });
+
+      document.querySelectorAll('a[data-transition="page"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+            return;
+          }
+          event.preventDefault();
+          document.body.classList.add("page-exit");
+          setTimeout(function () {
+            window.location.href = link.href;
+          }, 240);
+        });
+      });
+    </script>
+  </body>
+</html>
