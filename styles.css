@@ -271,6 +271,7 @@ h1 {
   font: inherit;
   color: var(--text);
   background: #ffffff;
+  display: block;
 }
 
 .form-textarea {
@@ -286,6 +287,23 @@ h1 {
 .contact-form .btn {
   border: 0;
   cursor: pointer;
+}
+
+/* Fallback styling if input classes are stripped or stale HTML is cached */
+.contact-form label {
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  color: var(--text);
+  background: #ffffff;
+  display: block;
 }
 
 .form-note {
