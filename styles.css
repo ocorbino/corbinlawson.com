@@ -59,12 +59,12 @@ main,
 .site-header {
   width: 100%;
   margin: 0;
-  padding: 1rem 0 1.1rem;
+  padding: 0 0 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
   background: #6b7280;
   color: #ffffff;
   animation: header-swoop 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -75,24 +75,43 @@ main,
   color: #ffffff;
   font-weight: 800;
   letter-spacing: 0.02em;
+  background: #1f2937;
+  border-top: 1px solid #111827;
+  border-bottom: 1px solid #111827;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  padding: 0.58rem 0.9rem;
+  width: 100%;
+  text-align: center;
+  display: block;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: min(980px, 92vw);
+  gap: 0;
   margin: 0;
   padding: 0;
+}
+
+.nav-list li + li {
+  border-left: 1px solid #d1d5db;
 }
 
 .nav-list a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
+  padding: 0.2rem 1rem;
+  display: inline-block;
 }
 
 .nav-list a:hover {
-  color: #f3f4f6;
+  color: #e5e7eb;
 }
 
 @keyframes header-swoop {
@@ -255,11 +274,137 @@ h1 {
     url("media/services-code-bg.png");
 }
 
+.design-layout {
+  position: relative;
+  width: min(980px, 95%);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.design-copy {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: start;
+  text-align: left;
+}
+
+.design-copy h2 {
+  justify-self: center;
+  text-align: center;
+}
+
+.design-copy p {
+  text-align: left;
+}
+
+.design-copy h2,
+.design-copy p {
+  margin: 0;
+}
+
+.tech-stack {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  border-radius: 14px;
+  padding: 0.85rem 0.8rem;
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+}
+
+.tech-top,
+.tech-bottom {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.tech-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.tech-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
 .panel-feature-marketing {
   background-color: #e5e7eb;
   background-image:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)),
     url("media/services-marketing-bg.png");
+}
+
+.marketing-layout {
+  position: relative;
+  width: min(980px, 95%);
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.marketing-stack {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  border-radius: 14px;
+  padding: 0.85rem 0.8rem;
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+}
+
+.marketing-top,
+.marketing-bottom {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.marketing-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.logo-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.65rem;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: #ffffff;
+}
+
+.logo-google {
+  color: #ea4335;
+}
+
+.logo-facebook {
+  color: #1877f2;
+  text-transform: lowercase;
+}
+
+.marketing-copy {
+  display: grid;
+  gap: 0.55rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.marketing-copy h2,
+.marketing-copy p {
+  margin: 0;
 }
 
 .panel-feature-maintenance {
@@ -389,6 +534,28 @@ h1 {
 @media (max-width: 640px) {
   .hero {
     padding-top: 3.2rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .nav-list li + li {
+    border-left: 0;
+  }
+
+  .design-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .design-copy {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .marketing-layout {
+    grid-template-columns: 1fr;
   }
 }
 
