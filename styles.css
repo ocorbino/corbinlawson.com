@@ -618,12 +618,19 @@ h1 {
   }
 
   .nav-list {
-    flex-direction: column;
-    gap: 0.35rem;
+    flex-direction: row;
+    width: 100%;
   }
 
-  .nav-list li + li {
-    border-left: 0;
+  .nav-list li {
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  .nav-list a {
+    width: 100%;
+    padding: 0.2rem 0.35rem;
+    font-size: 0.95rem;
   }
 
   .design-layout {
@@ -637,6 +644,14 @@ h1 {
 
   .marketing-layout {
     grid-template-columns: 1fr;
+  }
+
+  .marketing-copy {
+    order: 1;
+  }
+
+  .marketing-left {
+    order: 2;
   }
 
   .demo-layout {
